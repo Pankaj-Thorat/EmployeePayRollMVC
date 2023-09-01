@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Index";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
     <link rel="stylesheet" href="~/css/Index.css" />
 <div class="ed-head">
      <h1>Employee Details</h1>
@@ -76,9 +78,9 @@
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>
             <td class = "actions">
-                @Html.ActionLink("Edit", "Edit", new {  id=item.EmpId  }) |
-                @Html.ActionLink("Details", "Details", new { id=item.EmpId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.EmpId })
+                    @Html.ActionLink("", "Edit", new { id = item.EmpId }, new { @class = "fa fa-pencil" }) |
+                    @* @Html.ActionLink("Details", "Details", new { id=item.EmpId }) | *@
+                    @Html.ActionLink("", "Delete", new { id = item.EmpId }, new { @class = "fa fa-trash" })         
             </td>
         </tr>
 }

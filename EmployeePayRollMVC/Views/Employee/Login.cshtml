@@ -22,11 +22,19 @@
                     <span></span>	
                     </span>
                 </p>
-
-                
                 <span asp-validation-for="EmpId" class="text-danger"></span>
             </div>
-           
+
+            <div class="form-group">
+                <label asp-for="EmpName" class="control-label">Employee Name </label>
+                 <p>
+                    <span class="input">
+                <input asp-for="EmpName" class="form-control" />
+                    <span></span>	
+                    </span>
+                </p>
+                <span asp-validation-for="EmpName" class="text-danger"></span>
+                </div>
             <button class=" create-new-btn " type="submit"> 
                      Login
             </button>

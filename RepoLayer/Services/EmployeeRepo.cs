@@ -138,7 +138,7 @@ namespace RepoLayer.Services
 
         public Employee LoginEmployee(EmployeeLogin employeeAccount)
         {
-            Employee employee = null;
+            Employee employee = new Employee();
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -149,6 +149,7 @@ namespace RepoLayer.Services
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@EmpId", employeeAccount.EmpId); 
+                    cmd.Parameters.AddWithValue("@EmpName", employeeAccount.EmpName); 
 
                     var returnParameter = cmd.Parameters.Add("@Result", SqlDbType.Int);
                     returnParameter.Direction = ParameterDirection.ReturnValue;
@@ -162,7 +163,7 @@ namespace RepoLayer.Services
                             throw new Exception("Employee not present");
                         }
 
-                        if (rdr.Read())
+                        while (rdr.Read())
                         {
                             employee = new Employee();
                             employee.EmpId = Convert.ToInt32(rdr["EmpId"]);

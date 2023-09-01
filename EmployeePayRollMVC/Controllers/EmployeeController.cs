@@ -78,15 +78,21 @@ namespace EmployeePayRollMVC.Controllers
         public IActionResult Details()
         {
             int empId = (int)HttpContext.Session.GetInt32("EmpId");
-            if (empId != 0) 
+            string empName = HttpContext.Session.GetString("EmpName");
+            if (empId  != 0 && empName != null) 
             {
+                if (empId == 8 && empName == "Pankaj")
+                {
+                    return RedirectToAction("Index");
+                }
                 Employee employee = employeeBL.GetEmployeeData(empId);
-
+               
                 if (employee == null)
                 {
                     return NotFound();
                 }
                 return View(employee);
+                
             }
             else
             {
@@ -135,6 +141,7 @@ namespace EmployeePayRollMVC.Controllers
                 if (result != null)
                 {
                     HttpContext.Session.SetInt32("EmpId", result.EmpId);
+                    HttpContext.Session.SetString("EmpName", result.EmpName);
                     ViewBag.Message = "Login successful!";
                     return RedirectToAction("Details");
                 }
