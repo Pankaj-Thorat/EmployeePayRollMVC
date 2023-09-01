@@ -1,0 +1,42 @@
+﻿@model CommonLayer.Model.EmployeeLogin
+
+
+@{
+    ViewData["Title"] = "Login";
+}
+    <link rel="stylesheet" href="~/css/Index.css" />
+
+<h1>Login</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmpId" class="control-label">Employee Id</label>
+                 <p>
+                    <span class="input">
+                    <input asp-for="EmpId" class="form-control" />
+                    <span></span>	
+                    </span>
+                </p>
+
+                
+                <span asp-validation-for="EmpId" class="text-danger"></span>
+            </div>
+           
+            <button class=" create-new-btn " type="submit"> 
+                     Login
+            </button>
+            
+        </form>
+        <p>@ViewBag.Message</p>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

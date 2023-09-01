@@ -1,0 +1,141 @@
+﻿html{
+    height:100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+    background: url("/assets/background.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    margin-bottom: 0px;
+}
+.table td, .table th {
+    padding: 0.75rem;
+    vertical-align: middle !important;
+    border-top: 1px solid #dee2e6;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 60px 20px 160px;
+    justify-content:flex-start;
+}
+
+.ed-head{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom: 20px;
+}
+
+.create-new-btn {
+    text-align: right;
+    font-size: larger;
+    color:white;
+    font-weight: 100;
+    background-color: #37ceb1;
+    border: none;
+    border-radius: 5px;
+    padding: 13px 25px;
+    cursor: pointer;
+}
+.actions{
+    color:white;
+}
+.logo {
+    text-align: left;
+    margin-left: 10px;
+}
+
+h4 {
+    text-align: center;
+    text-shadow: 1px 4px 6px rgba(255,255,255,0.6);
+}
+h1 {
+    text-align: left;
+    font-weight:700;
+    text-shadow: 1px 4px 6px rgba(255,255,255,0.6);
+}
+h2 {
+    text-shadow: 1px 4px 6px rgba(255,255,255,0.6);
+}
+
+
+.profileImg{
+    display:flex;
+
+
+}
+.Profile-image-1{
+    max-width:70px;
+    padding:10px
+}
+
+
+.head-tags {
+    background: #37ceb1;
+    color: #FFF;
+}
+
+.container{
+    margin-top:20px;
+    margin-bottom:0px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+
+.employee-details {
+    background-color: #4344437f !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px !important;
+    padding: 30px;
+    padding-left:50px;
+    
+    
+}
+
+.rounded {
+    border-radius: 1.25rem !important;
+}
+
+a{
+    color:white;
+}
+
+td {
+    color: white;
+    vertical-align: middle !important;
+}
+
+.footer {
+    color:white;
+    background-color: #00000000;
+    margin-top: auto;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    background: url("/assets/background.jpg") rgb(39, 39, 40, 0.34);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position-x: bottom;
+    background-position-y: bottom;
+    background-blend-mode: multiply;
+}
+
+.text-muted {
+    color: #ffffff !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #37ceb1;
+    border-color: #37ceb1;
+}
+.row{
+    color:white;
+}
+

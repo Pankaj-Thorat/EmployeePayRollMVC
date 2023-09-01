@@ -1,0 +1,7 @@
+body .table td, body .table th {
+  padding: 0.75rem;
+  vertical-align: middle !important;
+  border-top: 1px solid #dee2e6;
+}
+
+/*# sourceMappingURL=custom.css.map */

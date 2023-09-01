@@ -1,0 +1,35 @@
+﻿body {
+}
+
+/*.column1 {
+    background-color: #83d9e9 !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px !important;
+    padding: 30px;
+    margin-bottom: 20px;
+}*/
+h2{
+    text-align:center;
+    font-size:32px;
+    font-weight:700;
+}
+
+label{
+    font-weight:700;
+    font-size : 20px;
+}
+.border-primary {
+    border-color: #37ceb1 !important;
+}
+
+.rounded {
+    border-radius: 1.25rem !important;
+}
+.backtolist{
+    padding:10px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #37ceb1;
+    border-color: #37ceb1;
+}
