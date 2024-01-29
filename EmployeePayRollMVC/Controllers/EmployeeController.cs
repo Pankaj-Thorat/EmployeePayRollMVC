@@ -3,8 +3,11 @@ using CommonLayer;
 using CommonLayer.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+
 
 namespace EmployeePayRollMVC.Controllers
 {
@@ -121,8 +124,16 @@ namespace EmployeePayRollMVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int? id)
         {
-            employeeBL.DeleteEmployee(id);
-            return RedirectToAction("Index");
+            try
+            {
+                employeeBL.DeleteEmployee(id);
+                return RedirectToAction("Index");
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
         [HttpGet]
         public IActionResult Login()
@@ -135,24 +146,37 @@ namespace EmployeePayRollMVC.Controllers
         [HttpPost]
         public IActionResult Login([Bind] EmployeeLogin login)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var result = employeeBL.LoginEmployee(login);
-                if (result != null)
+                if (ModelState.IsValid)
                 {
-                    HttpContext.Session.SetInt32("EmpId", result.EmpId);
-                    HttpContext.Session.SetString("EmpName", result.EmpName);
-                    ViewBag.Message = "Login successful!";
-                    return RedirectToAction("Details");
+                    var result = employeeBL.LoginEmployee(login);
+                    if (result != null)
+                    {
+                        HttpContext.Session.SetInt32("EmpId", result.EmpId);
+                        if (!string.IsNullOrEmpty(result.EmpName))
+                        {
+                            HttpContext.Session.SetString("EmpName", result.EmpName);
+                        }
+                        string username =", "+ result.EmpName+"!";
+                        TempData["Username"] = username;
+                        return RedirectToAction("Details");
+                    }
+                    else
+                    {
+                        // Add an error message to ModelState
+                        ModelState.AddModelError(string.Empty, "Invalid login credentials. Please try again.");
+                        return View(login);
+                    }
                 }
-                else
-                {
-                    return View(login);
-                }
+                return View(login);
             }
-            return View(login);
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-
-
     }
 }
+
+
