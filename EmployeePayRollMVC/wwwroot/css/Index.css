@@ -22,8 +22,8 @@ body {
     display: flex;
     align-items: center;
     background-color: #fff;
-    padding: 20px 60px 20px 160px;
-    justify-content:flex-start;
+    padding: 20px 60px 20px 180px;
+    justify-content:space-between;
 }
 
 .ed-head{
@@ -43,12 +43,25 @@ body {
     padding: 13px 25px;
     cursor: pointer;
 }
-.actions{
-    color:white;
+.cnb-txt {
+    color: white;
+}
+.cnb-txt:hover{
+    color:black;
+}
+.actions {
+    color: white;
 }
 .logo {
     text-align: left;
+    vertical-align:middle;
+    display:flex;
+    
+}
+.logo-txt{
     margin-left: 10px;
+    vertical-align:middle;
+    padding-top:5px;
 }
 
 h4 {
@@ -88,18 +101,24 @@ h2 {
     padding-bottom:20px;
 }
 
-
+.details-container {
+    padding-left: 20px;
+}
 .employee-details {
     background-color: #4344437f !important;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px !important;
-    padding: 30px;
-    padding-left:50px;  
+    padding: 50px;
+    padding-bottom:20px  
 }
 
 .rounded {
     border-radius: 1.25rem !important;
 }
 
+.login {
+    color: #212529;
+    margin-right:160px;
+}
 
 a {
     color: white;
@@ -138,5 +157,8 @@ td {
 }
 .row{
     color:white;
+}
+.navusername{
+    margin-right:20px;
 }
 
